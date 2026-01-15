@@ -1,3 +1,45 @@
+function getCardData() {
+  const cards = document.querySelectorAll(".card");
+  const cardData = [];
+
+  cards.forEach((card) => {
+    const title = card.querySelectorAll(".card-title")[0].innerText;
+    const content = card.querySelector(".card-content").innerText;
+
+    const id = card.dataset.cardId;
+    const category = card.dataset.cardCategory;
+
+    cardData.push({
+      id: id,
+      category: category,
+      title: title,
+      content: content,
+    });
+  });
+
+  return cardData;
+}
+
+const myCardData = getCardData();
+console.log(myCardData);
+
+async function fetchAndRenderCards() {
+  const container = document.getElementById("card-container");
+  try {
+    const response = await fetch("https://api.example.com/cards");
+    const data = await response.json();
+    data.forEach((cardInfo) => {
+      const cardDiv = document.createElement("div");
+      cardDiv.classList.add("card");
+      cardDiv.innerHTML = `<h3 class="card-title">${cardInfo.title}</h3><p class="card-content">${cardInfo.content}</p>`;
+      container.appendChild(cardDiv);
+    });
+  } catch (error) {
+    console.error("Error Fetching Cards:", error);
+  }
+}
+fetchAndRenderCards();
+
 // let cardsList = document.querySelector(".cards");
 // let cards = [];
 
