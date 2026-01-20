@@ -1,6 +1,7 @@
 .cards {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
   gap: 1rem;
   flex-wrap: wrap;
@@ -8,9 +9,10 @@
 }
 
 .card {
-  width: 250px;
-  height: 350px;
-  perspective: 800px;
+  position: relative;
+  width: 200px;
+  height: 300px;
+  perspective: 400px;
   border-style: none;
   flex-wrap: nowrap;
 }
@@ -44,8 +46,8 @@
 }
 
 .card-back {
-  background-color: #aa6767;
-  color: #611818;
+  background-color: #5c5b75;
+  color: #6f67c2;
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
@@ -57,11 +59,11 @@ a {
 }
 header,
 footer {
-  border-top: 2px solid #9034db;
-  background-color: #440b7a;
+  border-top: 2px solid #a286bd;
+  background-color: #6e5f7c;
   color: white;
   text-align: center;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 footer {
   position: fixed;
@@ -85,7 +87,7 @@ nav {
   display: flex; /* 1 */
   justify-content: space-between; /* 2 */
   padding: 1rem 2rem; /* 3 */
-  background: #440b7a; /* 4 */
+  background: #6e5f7c; /* 4 */
 }
 nav ul {
   display: flex; /* 5 */
@@ -102,5 +104,5 @@ nav h2 {
   color: #fff;
 }
 footer a {
-  color: #9d59d4;
+  color: #a286bd;
 }
